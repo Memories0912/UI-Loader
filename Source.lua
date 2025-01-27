@@ -147,7 +147,7 @@ local CoreGui = LocalPlayer.PlayerGui
 function HirimiLib:MakeNotify(NotifyConfig)
 	local NotifyConfig = NotifyConfig or {}
 	NotifyConfig.Title = NotifyConfig.Title or "Hirimi Hub"
-	NotifyConfig.Description = NotifyConfig.Description or "Notification"
+	NotifyConfig.Description = "Notification"
 	NotifyConfig.Content = NotifyConfig.Content or "Content"
 	NotifyConfig.Time = NotifyConfig.Time or 0.5
 	NotifyConfig.Delay = NotifyConfig.Delay or 5
@@ -406,7 +406,8 @@ function HirimiLib:MakeGui(GuiConfig)
 
 	DropShadowHolder.BackgroundTransparency = 1
 	DropShadowHolder.BorderSizePixel = 0
-	DropShadowHolder.Position = UDim2.new(0, 100, 0, 100)
+    DropShadow.AnchorPoint = Vector2.new(0.5, 0.5)
+	DropShadowHolder.Position = UDim2.new(0.35, 0, 0.2, 0)
 	DropShadowHolder.Size = GuiConfig.Size
 	DropShadowHolder.ZIndex = 0
 	DropShadowHolder.Name = "DropShadowHolder"
@@ -745,6 +746,7 @@ function HirimiLib:MakeGui(GuiConfig)
 	end)
 	Min.MouseButton1Down:Connect(function()
 		CircleClick(Min, Mouse.X, Mouse.Y)
+        HirimiLib:MakeNotify({Title = GuiConfig.Name, Content = "Press ".."RightShift to Open UI", Time = 1, Delay = 5})
 		DropShadowHolder.Visible = false
 	end)
 	Close.MouseButton1Down:Connect(function()
