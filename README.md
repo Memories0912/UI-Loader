@@ -68,6 +68,5 @@ Dropdown:AddOption("Option 3")
 Dropdown:Clear()
 Dropdown:Refresh({"Option 1", "Option 2"}, {"Option 1"})
 -- Notify
-local Notify = FlurioreLib:MakeNotify({Title = "Hirimi Library", Description = "Notification", Content = "My UI better than Deep Voice", Time = 1, Delay = 5})
-Notify:Close()
+local Notify = FlurioreLib:MakeNotify({Title = "Hirimi Library", Content = "My UI better than Deep Voice", Time = 1, Delay = 5})
 ```
