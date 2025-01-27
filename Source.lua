@@ -749,7 +749,11 @@ function HirimiLib:MakeGui(GuiConfig)
 	end)
 	Close.MouseButton1Down:Connect(function()
 		CircleClick(Close, Mouse.X, Mouse.Y)
-		DropShadowHolder.Visible = false
+		TweenService:Create(DropShadowHolder, TweenInfo.new(1.5), {Position = UDim2.new(1.1, 0, 0.2, 0)}):Play()
+		wait(2)
+		DropShadowHolder:Destroy()
+		DropShadow:Destroy()
+		Main:Destroy()
 	end)
 	UserInputService.InputBegan:Connect(function(input)
 		if input.KeyCode == Enum.KeyCode.RightShift then
