@@ -718,12 +718,7 @@ function HirimiLib:MakeGui(GuiConfig)
 	NamePlayer.Size = UDim2.new(1, -45, 1, 0)
 	NamePlayer.Name = "NamePlayer"
 	NamePlayer.Parent = Info
-
-	function GuiFunc:DestroyGui()
-		if CoreGui:FindFirstChild(HirimiGui) then 
-			HirimiGui:Destroy()
-		end
-	end
+	
 	local OldPos = DropShadowHolder.Position
 	local OldSize = GuiConfig.Size
 	MaxRestore.MouseButton1Down:Connect(function()
