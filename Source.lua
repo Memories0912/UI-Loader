@@ -2,7 +2,6 @@ local UserInputService = game:GetService("UserInputService")
 local TweenService = game:GetService("TweenService")
 local LocalPlayer = game:GetService("Players").LocalPlayer
 local Mouse = LocalPlayer:GetMouse()
-local CoreGui = LocalPlayer.PlayerGui 
 local function MakeDraggable(topbarobject, object)
 	local function CustomPos(topbarobject, object)
 		local Dragging = nil
@@ -142,7 +141,7 @@ local HirimiLib = {}
 local TweenService = game:GetService("TweenService")
 local LocalPlayer = game:GetService("Players").LocalPlayer
 local Mouse = LocalPlayer:GetMouse()
-local CoreGui = LocalPlayer.PlayerGui 
+local CoreGui = game:GetService("CoreGui")
 
 function HirimiLib:MakeNotify(NotifyConfig)
 	local NotifyConfig = NotifyConfig or {}
@@ -718,7 +717,7 @@ function HirimiLib:MakeGui(GuiConfig)
 	NamePlayer.Size = UDim2.new(1, -45, 1, 0)
 	NamePlayer.Name = "NamePlayer"
 	NamePlayer.Parent = Info
-	
+
 	local OldPos = DropShadowHolder.Position
 	local OldSize = GuiConfig.Size
 	MaxRestore.MouseButton1Down:Connect(function()
@@ -2281,7 +2280,7 @@ function HirimiLib:MakeGui(GuiConfig)
 	local TextLabel = Instance.new("TextLabel")
 	
 	Load.Name = "Load"
-	Load.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+	Load.Parent = CoreGui
 	Load.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 	
 	Frame.Parent = Load
